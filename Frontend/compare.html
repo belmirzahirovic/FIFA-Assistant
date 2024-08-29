@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA Assistant - Comparison</title>
+    <link rel="stylesheet" href="compare.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="images/svg-edited.svg" alt="Logo">
+                </a>
+            </div>
+            <div class="header-item">
+                <a href="players.html">Players</a>
+            </div>
+            <div class="header-item">
+                <a href="builder.html">Squad Builder</a>
+            </div>
+            <div class="header-item">
+                <a href="compare.html">Compare</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <div class="compare-container">
+                <div class="player-compare" id="player1">
+                    <div class="search-bar">
+                        <input type="text" id="searchPlayer1" placeholder="Search for Player 1..." class="search-input">
+                        <ul class="dropdown-content" id="dropdownPlayer1"></ul>
+                    </div>
+                    <div id="player1Card"></div>
+                    <div id="player1Details" class="player-details hidden">
+                        <div class="player-detail"><strong>Name:</strong> <span id="player1Name"></span></div>
+                        <div class="player-detail"><strong>Overall Rating:</strong> <span id="player1OverallRating"></span></div>
+                        <div class="player-detail"><strong>Club:</strong> <span id="player1Club"></span></div>
+                        <div class="player-detail"><strong>Nation:</strong> <span id="player1Nation"></span></div>
+                        <div class="player-detail"><strong>Position:</strong> <span id="player1Position"></span></div>
+                        <div class="player-detail"><strong>Foot:</strong> <span id="player1Foot"></span></div>
+                        <div class="player-detail"><strong>Skill Moves:</strong> <span id="player1SkillMoves"></span></div>
+                        <div class="player-detail"><strong>Weak Foot:</strong> <span id="player1WeakFoot"></span></div>
+                        <div class="player-detail"><strong>Height:</strong> <span id="player1Height"></span></div>
+                        <div class="player-detail"><strong>Weight:</strong> <span id="player1Weight"></span></div>
+                        <div class="player-detail"><strong>Att/Def WR:</strong> <span id="player1AttDefWR"></span></div>
+                        <div class="player-detail"><strong>Age:</strong> <span id="player1Age"></span></div>
+                    </div>
+                    <div id="player1Attributes" class="attributes-container hidden">
+                        <div class="attribute-category">
+                            <h3>Pace</h3>
+                            <div class="attribute">Acceleration <span class="value-color" id="player1Acceleration"></span></div>
+                            <div class="attribute">Sprint Speed <span class="value-color" id="player1SprintSpeed"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Shooting</h3>
+                            <div class="attribute">Att. Position <span class="value-color" id="player1AttPosition"></span></div>
+                            <div class="attribute">Finishing <span class="value-color" id="player1Finishing"></span></div>
+                            <div class="attribute">Shot Power <span class="value-color" id="player1ShotPower"></span></div>
+                            <div class="attribute">Long Shots <span class="value-color" id="player1LongShots"></span></div>
+                            <div class="attribute">Volleys <span class="value-color" id="player1Volleys"></span></div>
+                            <div class="attribute">Penalties <span class="value-color" id="player1Penalties"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Passing</h3>
+                            <div class="attribute">Vision <span class="value-color" id="player1Vision"></span></div>
+                            <div class="attribute">Crossing <span class="value-color" id="player1Crossing"></span></div>
+                            <div class="attribute">FK. Acc. <span class="value-color" id="player1FKAcc"></span></div>
+                            <div class="attribute">Short Pass <span class="value-color" id="player1ShortPass"></span></div>
+                            <div class="attribute">Long Pass <span class="value-color" id="player1LongPass"></span></div>
+                            <div class="attribute">Curve <span class="value-color" id="player1Curve"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Dribbling</h3>
+                            <div class="attribute">Agility <span class="value-color" id="player1Agility"></span></div>
+                            <div class="attribute">Balance <span class="value-color" id="player1Balance"></span></div>
+                            <div class="attribute">Reactions <span class="value-color" id="player1Reactions"></span></div>
+                            <div class="attribute">Ball Control <span class="value-color" id="player1BallControl"></span></div>
+                            <div class="attribute">Dribbling <span class="value-color" id="player1Dribbling"></span></div>
+                            <div class="attribute">Composure <span class="value-color" id="player1Composure"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Defending</h3>
+                            <div class="attribute">Interceptions <span class="value-color" id="player1Interceptions"></span></div>
+                            <div class="attribute">Heading Acc. <span class="value-color" id="player1HeadingAcc"></span></div>
+                            <div class="attribute">Def. Aware <span class="value-color" id="player1DefAware"></span></div>
+                            <div class="attribute">Stand Tackle <span class="value-color" id="player1StandTackle"></span></div>
+                            <div class="attribute">Slide Tackle <span class="value-color" id="player1SlideTackle"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Physicality</h3>
+                            <div class="attribute">Jumping <span class="value-color" id="player1Jumping"></span></div>
+                            <div class="attribute">Stamina <span class="value-color" id="player1Stamina"></span></div>
+                            <div class="attribute">Strength <span class="value-color" id="player1Strength"></span></div>
+                            <div class="attribute">Aggression <span class="value-color" id="player1Aggression"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-compare" id="player2">
+                    <div class="search-bar">
+                        <input type="text" id="searchPlayer2" placeholder="Search for Player 2..." class="search-input">
+                        <ul class="dropdown-content" id="dropdownPlayer2"></ul>
+                    </div>
+                    <div id="player2Card"></div>
+                    <div id="player2Details" class="player-details hidden">
+                        <div class="player-detail"><strong>Name:</strong> <span id="player2Name"></span></div>
+                        <div class="player-detail"><strong>Overall Rating:</strong> <span id="player2OverallRating"></span></div>
+                        <div class="player-detail"><strong>Club:</strong> <span id="player2Club"></span></div>
+                        <div class="player-detail"><strong>Nation:</strong> <span id="player2Nation"></span></div>
+                        <div class="player-detail"><strong>Position:</strong> <span id="player2Position"></span></div>
+                        <div class="player-detail"><strong>Foot:</strong> <span id="player2Foot"></span></div>
+                        <div class="player-detail"><strong>Skill Moves:</strong> <span id="player2SkillMoves"></span></div>
+                        <div class="player-detail"><strong>Weak Foot:</strong> <span id="player2WeakFoot"></span></div>
+                        <div class="player-detail"><strong>Height:</strong> <span id="player2Height"></span></div>
+                        <div class="player-detail"><strong>Weight:</strong> <span id="player2Weight"></span></div>
+                        <div class="player-detail"><strong>Att/Def WR:</strong> <span id="player2AttDefWR"></span></div>
+                        <div class="player-detail"><strong>Age:</strong> <span id="player2Age"></span></div>
+                    </div>
+                    <div id="player2Attributes" class="attributes-container hidden">
+                        <div class="attribute-category">
+                            <h3>Pace</h3>
+                            <div class="attribute">Acceleration <span class="value-color" id="player2Acceleration"></span></div>
+                            <div class="attribute">Sprint Speed <span class="value-color" id="player2SprintSpeed"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Shooting</h3>
+                            <div class="attribute">Att. Position <span class="value-color" id="player2AttPosition"></span></div>
+                            <div class="attribute">Finishing <span class="value-color" id="player2Finishing"></span></div>
+                            <div class="attribute">Shot Power <span class="value-color" id="player2ShotPower"></span></div>
+                            <div class="attribute">Long Shots <span class="value-color" id="player2LongShots"></span></div>
+                            <div class="attribute">Volleys <span class="value-color" id="player2Volleys"></span></div>
+                            <div class="attribute">Penalties <span class="value-color" id="player2Penalties"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Passing</h3>
+                            <div class="attribute">Vision <span class="value-color" id="player2Vision"></span></div>
+                            <div class="attribute">Crossing <span class="value-color" id="player2Crossing"></span></div>
+                            <div class="attribute">FK. Acc. <span class="value-color" id="player2FKAcc"></span></div>
+                            <div class="attribute">Short Pass <span class="value-color" id="player2ShortPass"></span></div>
+                            <div class="attribute">Long Pass <span class="value-color" id="player2LongPass"></span></div>
+                            <div class="attribute">Curve <span class="value-color" id="player2Curve"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Dribbling</h3>
+                            <div class="attribute">Agility <span class="value-color" id="player2Agility"></span></div>
+                            <div class="attribute">Balance <span class="value-color" id="player2Balance"></span></div>
+                            <div class="attribute">Reactions <span class="value-color" id="player2Reactions"></span></div>
+                            <div class="attribute">Ball Control <span class="value-color" id="player2BallControl"></span></div>
+                            <div class="attribute">Dribbling <span class="value-color" id="player2Dribbling"></span></div>
+                            <div class="attribute">Composure <span class="value-color" id="player2Composure"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Defending</h3>
+                            <div class="attribute">Interceptions <span class="value-color" id="player2Interceptions"></span></div>
+                            <div class="attribute">Heading Acc. <span class="value-color" id="player2HeadingAcc"></span></div>
+                            <div class="attribute">Def. Aware <span class="value-color" id="player2DefAware"></span></div>
+                            <div class="attribute">Stand Tackle <span class="value-color" id="player2StandTackle"></span></div>
+                            <div class="attribute">Slide Tackle <span class="value-color" id="player2SlideTackle"></span></div>
+                        </div>
+                        <div class="attribute-category">
+                            <h3>Physicality</h3>
+                            <div class="attribute">Jumping <span class="value-color" id="player2Jumping"></span></div>
+                            <div class="attribute">Stamina <span class="value-color" id="player2Stamina"></span></div>
+                            <div class="attribute">Strength <span class="value-color" id="player2Strength"></span></div>
+                            <div class="attribute">Aggression <span class="value-color" id="player2Aggression"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="images/mbappe1.png" alt="Description of the image">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 FIFA Assistant. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', function () {
+                var body = document.body;
+                var scrollPosition = window.scrollY + window.innerHeight;
+                var documentHeight = document.body.offsetHeight;
+                var threshold = 50;
+                if (documentHeight - scrollPosition < threshold) {
+                    body.classList.add('show-footer');
+                } else {
+                    body.classList.remove('show-footer');
+                }
+            });
+        });
+        async function fetchPlayerNames(query, dropdownId) {
+            if (query === '') {
+                document.getElementById(dropdownId).style.display = 'none';
+                return;
+            }
+            try {
+                const response = await fetch(`/search_players?query=${encodeURIComponent(query)}`);
+                if (response.ok) {
+                    const playerNames = await response.json();
+                    updateDropdown(playerNames, dropdownId);
+                } else {
+                    console.error('Failed to fetch player names:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error fetching player names:', error);
+            }
+        }
+        function updateDropdown(playerNames, dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.innerHTML = '';
+            playerNames.forEach(playerName => {
+                const a = document.createElement('a');
+                a.href = '#';
+                a.textContent = playerName;
+                a.addEventListener('click', function() {
+                    selectPlayer(playerName, dropdownId);
+                });
+                dropdown.appendChild(a);
+            });
+            dropdown.style.display = 'block';
+        }
+        async function selectPlayer(playerName, dropdownId) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => dropdown.style.display = 'none');
+            try {
+                const response = await fetch(`/player_details?name=${encodeURIComponent(playerName)}`);
+                if (response.ok) {
+                    const playerDetails = await response.json();
+                    displayPlayerCard(playerDetails, dropdownId);
+                    displayPlayerDetails(playerDetails, dropdownId);
+                    displayPlayerAttributes(playerDetails, dropdownId);
+                    const detailsContainerId = dropdownId === 'dropdownPlayer1' ? 'player1Details' : 'player2Details';
+                    const attributesContainerId = dropdownId === 'dropdownPlayer1' ? 'player1Attributes' : 'player2Attributes';
+                    document.getElementById(detailsContainerId).classList.remove('hidden');
+                    document.getElementById(attributesContainerId).classList.remove('hidden');
+                } else {
+                    console.error('Failed to fetch player details:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error fetching player details:', error);
+            }
+        }
+        function displayPlayerCard(player, dropdownId) {
+            const playerCardContainerId = dropdownId === 'dropdownPlayer1' ? 'player1Card' : 'player2Card';
+            const playerCardContainer = document.getElementById(playerCardContainerId);
+            const playerCardHTML = `
+                <div class="fut-player-card">
+                    <div class="player-card-top">
+                        <div class="player-master-info">
+                            <div class="player-position">${player.Position || ''}</div>
+                        </div>
+                        <div class="player-picture">
+                            <img src="${player.Image_Link || 'images/default.png'}" alt="${player.Name || 'Player image'}">
+                        </div>
+                    </div>
+                    <div class="player-card-bottom">
+                        <div class="player-info">
+                            <div class="player-name">${player.Name || ''}</div>
+                            <div class="player-features">
+                                <div class="player-features-col">
+                                    <span>
+                                        <div class="player-feature-value">${player.Acceleration || ''}</div>
+                                        <div class="player-feature-title">PAC</div>
+                                    </span>
+                                    <span>
+                                        <div class="player-feature-value">${player.Shot_Power || ''}</div>
+                                        <div class="player-feature-title">SHO</div>
+                                    </span>
+                                    <span>
+                                        <div class="player-feature-value">${player.Short_Pass || ''}</div>
+                                        <div class="player-feature-title">PAS</div>
+                                    </span>
+                                </div>
+                                <div class="player-features-col">
+                                    <span>
+                                        <div class="player-feature-value">${player.Dribbling || ''}</div>
+                                        <div class="player-feature-title">DRI</div>
+                                    </span>
+                                    <span>
+                                        <div class="player-feature-value">${player.Def_Aware || ''}</div>
+                                        <div class="player-feature-title">DEF</div>
+                                    </span>
+                                    <span>
+                                        <div class="player-feature-value">${player.Strength || ''}</div>
+                                        <div class="player-feature-title">PHY</div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            playerCardContainer.innerHTML = playerCardHTML;
+        }
+        function displayPlayerDetails(player, dropdownId) {
+            const detailsPrefix = dropdownId === 'dropdownPlayer1' ? 'player1' : 'player2';
+            document.getElementById(`${detailsPrefix}Name`).textContent = player.Name || '';
+            document.getElementById(`${detailsPrefix}OverallRating`).textContent = player.Overall_Rating || '';
+            document.getElementById(`${detailsPrefix}Club`).textContent = player.Club || '';
+            document.getElementById(`${detailsPrefix}Nation`).textContent = player.Nation || '';
+            document.getElementById(`${detailsPrefix}Position`).textContent = player.Position || '';
+            document.getElementById(`${detailsPrefix}Foot`).textContent = player.Foot || '';
+            document.getElementById(`${detailsPrefix}SkillMoves`).textContent = player.Skill_Moves || '';
+            document.getElementById(`${detailsPrefix}WeakFoot`).textContent = player.Weak_Foot || '';
+            document.getElementById(`${detailsPrefix}Height`).textContent = player.Height || '';
+            document.getElementById(`${detailsPrefix}Weight`).textContent = player.Weight || '';
+            document.getElementById(`${detailsPrefix}AttDefWR`).textContent = player.Att_Def_WR || '';
+            document.getElementById(`${detailsPrefix}Age`).textContent = player.Age || '';
+        }
+        function displayPlayerAttributes(player, dropdownId) {
+            const attributesPrefix = dropdownId === 'dropdownPlayer1' ? 'player1' : 'player2';
+            document.getElementById(`${attributesPrefix}Acceleration`).textContent = player.Acceleration || '';
+            document.getElementById(`${attributesPrefix}SprintSpeed`).textContent = player.Sprint_Speed || '';
+            document.getElementById(`${attributesPrefix}AttPosition`).textContent = player.Att_Position || '';
+            document.getElementById(`${attributesPrefix}Finishing`).textContent = player.Finishing || '';
+            document.getElementById(`${attributesPrefix}ShotPower`).textContent = player.Shot_Power || '';
+            document.getElementById(`${attributesPrefix}LongShots`).textContent = player.Long_Shots || '';
+            document.getElementById(`${attributesPrefix}Volleys`).textContent = player.Volleys || '';
+            document.getElementById(`${attributesPrefix}Penalties`).textContent = player.Penalties || '';
+            document.getElementById(`${attributesPrefix}Vision`).textContent = player.Vision || '';
+            document.getElementById(`${attributesPrefix}Crossing`).textContent = player.Crossing || '';
+            document.getElementById(`${attributesPrefix}FKAcc`).textContent = player.FK_Acc || '';
+            document.getElementById(`${attributesPrefix}ShortPass`).textContent = player.Short_Pass || '';
+            document.getElementById(`${attributesPrefix}LongPass`).textContent = player.Long_Pass || '';
+            document.getElementById(`${attributesPrefix}Curve`).textContent = player.Curve || '';
+            document.getElementById(`${attributesPrefix}Agility`).textContent = player.Agility || '';
+            document.getElementById(`${attributesPrefix}Balance`).textContent = player.Balance || '';
+            document.getElementById(`${attributesPrefix}Reactions`).textContent = player.Reactions || '';
+            document.getElementById(`${attributesPrefix}BallControl`).textContent = player.Ball_Control || '';
+            document.getElementById(`${attributesPrefix}Dribbling`).textContent = player.Dribbling || '';
+            document.getElementById(`${attributesPrefix}Composure`).textContent = player.Composure || '';
+            document.getElementById(`${attributesPrefix}Interceptions`).textContent = player.Interceptions || '';
+            document.getElementById(`${attributesPrefix}HeadingAcc`).textContent = player.Heading_Acc || '';
+            document.getElementById(`${attributesPrefix}DefAware`).textContent = player.Def_Aware || '';
+            document.getElementById(`${attributesPrefix}StandTackle`).textContent = player.Stand_Tackle || '';
+            document.getElementById(`${attributesPrefix}SlideTackle`).textContent = player.Slide_Tackle || '';
+            document.getElementById(`${attributesPrefix}Jumping`).textContent = player.Jumping || '';
+            document.getElementById(`${attributesPrefix}Stamina`).textContent = player.Stamina || '';
+            document.getElementById(`${attributesPrefix}Strength`).textContent = player.Strength || '';
+            document.getElementById(`${attributesPrefix}Aggression`).textContent = player.Aggression || '';
+        }
+        document.getElementById('searchPlayer1').addEventListener('input', function() {
+            fetchPlayerNames(this.value, 'dropdownPlayer1');
+        });
+        document.getElementById('searchPlayer2').addEventListener('input', function() {
+            fetchPlayerNames(this.value, 'dropdownPlayer2');
+        });
+    </script>
+</body>
+</html>

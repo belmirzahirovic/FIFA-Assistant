@@ -1,0 +1,418 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #27374D;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #DDDDDD;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    gap: 2rem;
+}
+
+.header-item {
+    text-align: center;
+    color: black;
+    font-size: 1em;
+}
+
+.header-item a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1em;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.header-item a:hover {
+    color: #C3073F;
+}
+
+.header-logo img {
+    max-height: 4.375rem;
+    width: auto;
+    display: block;
+}
+
+.header-logo a {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.header-logo a:hover img {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+main {
+    flex-grow: 1;
+    padding-bottom: 9.375rem;
+    margin-top: 6.6875rem;
+}
+
+footer {
+    display: none;
+    background-color: #DDDDDD;
+    color: #333333;
+    padding: 1rem;
+    text-align: center;
+}
+
+body.show-footer footer {
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #DDDDDD;
+    color: #333333;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+img {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-image-container {
+    margin-top: 1.25rem;
+}
+
+.image-container {
+    text-align: center;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+#home {
+    padding-left: 2.5rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.compare-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem;
+    gap: 1.25rem;
+}
+
+.player-compare {
+    width: 45%;
+}
+
+.search-bar {
+    position: relative;
+    padding-bottom: 1.875rem;
+}
+
+.search-bar input {
+    padding: 0.5rem 0.625rem;
+    border: 0.125rem solid #DDDDDD;
+    border-radius: 0.5rem;
+    background-color: #1A1A1D;
+    color: #C3073F;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    height: 2.5rem;
+    margin: 0 auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1A1A1D;
+    border: 0.125rem solid #DDDDDD;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-sizing: border-box;
+    max-height: 12.5rem;
+    overflow-y: auto;
+    top: 2.5rem;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: #C3073F;
+    padding: 0.5rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #DDDDDD;
+    color: #1A1A1D;
+}
+
+.hidden {
+    display: none;
+}
+
+.fut-player-card {
+    position: relative;
+    width: 12.5rem;
+    height: 16.25rem;
+    background-image: url(https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+.fut-player-card .player-card-top {
+    position: relative;
+    color: #e9cc74;
+    padding: 0.4rem;
+}
+
+.fut-player-card .player-card-top .player-master-info {
+    position: absolute;
+    top: 0.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.4rem;
+    line-height: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-position {
+    font-size: 0.8rem;
+    margin-top: 0.625rem;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-nation {
+    display: block;
+    width: 1.2rem;
+    height: 0.9375rem;
+    margin: 0.15rem 0;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-nation img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-club {
+    display: block;
+    width: 1.26rem;
+    height: 1.5rem;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-club img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fut-player-card .player-card-top .player-picture {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.fut-player-card .player-card-top .player-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    bottom: 0;
+}
+
+.fut-player-card .player-card-top .player-picture .player-extra {
+    position: absolute;
+    right: 0;
+    bottom: -0.15rem;
+    overflow: hidden;
+    font-size: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    height: 0.9rem;
+    padding: 0 0.9rem;
+    text-align: right;
+    background: none;
+}
+
+.fut-player-card .player-card-top .player-picture .player-extra span {
+    margin-left: 0.2rem;
+    text-shadow: 1px 1px #333;
+}
+
+.fut-player-card .player-card-bottom {
+    position: relative;
+}
+
+.fut-player-card .player-card-bottom .player-info {
+    display: block;
+    padding: 0.15rem 0;
+    color: #e9cc74;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-name {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(233, 204, 116, 0.1);
+    padding-bottom: 0.075rem;
+    overflow: hidden;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-name span {
+    display: block;
+    text-shadow: 1px 1px #111;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features {
+    margin: 0.3rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col {
+    border-right: 1px solid rgba(233, 204, 116, 0.1);
+    padding: 0 1.2rem;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col span {
+    display: flex;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col span .player-feature-value {
+    margin-right: 0.15rem;
+    font-weight: 700;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col span .player-feature-title {
+    font-weight: 300;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col:last-child {
+    border: 0;
+}
+
+.player-details {
+    margin-top: 1.25rem;
+    padding: 0.9375rem 1.25rem;
+    background-color: #222;
+    border-radius: 0.3125rem;
+    color: white;
+    font-size: 0.9rem;
+    border: 0.125rem solid #DDDDDD;
+}
+
+.player-detail {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid #444;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.attributes-container {
+    margin-top: 1.25rem;
+    padding: 0.625rem;
+    background-color: transparent;
+    border-radius: 0.3125rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.attribute-category {
+    margin-bottom: 0.625rem;
+    background: #222;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid white;
+}
+
+.attribute-category h3 {
+    font-size: 1rem;
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.3125rem;
+}
+
+.attribute {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3125rem;
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.2);
+    color: white;
+    background: #444;
+    margin-top: 0.3125rem;
+}
+
+.attribute:last-child {
+    border-bottom: none;
+}
+
+.value-color {
+    background-color: #C3073F;
+    color: #333333;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+}
+
+#player1Details,
+#player2Details {
+    width: 86%;
+    margin: 0 auto;
+    margin-top: 1.875rem;
+}

@@ -1,0 +1,514 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #27374D;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #DDDDDD;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    gap: 2rem;
+}
+
+.header-item {
+    text-align: center;
+    color: black;
+    font-size: 1em;
+}
+
+.header-item a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1em;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.header-item a:hover {
+    color: #C3073F;
+}
+
+.header-logo img {
+    max-height: 4.375rem;
+    width: auto;
+    display: block;
+}
+
+.header-logo a {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.header-logo a:hover img {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+main {
+    flex-grow: 1;
+    padding-bottom: 9.375rem;
+    margin-top: 6.6875rem;
+}
+
+footer {
+    display: none;
+    background-color: #DDDDDD;
+    color: #333333;
+    padding: 1rem;
+    text-align: center;
+}
+
+body.show-footer footer {
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #DDDDDD;
+    color: #333333;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+img {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-image-container {
+    margin-top: 1.25rem;
+}
+
+.image-container {
+    text-align: center;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+#home {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.left-content {
+    width: 70%;
+    padding: 0.625rem;
+    position: relative;
+}
+
+.left-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.football-pitch {
+    width: 100%;
+    position: relative;
+}
+
+.player {
+    position: absolute;
+    border-radius: 50%;
+}
+
+#player1 {
+    top: 15%;
+    left: 7%;
+    width: 14%;
+    height: auto;
+}
+
+#player2 {
+    top: 40%;
+    left: 43%;
+    width: 14%;
+    height: auto;
+}
+
+#player3 {
+    top: 60%;
+    left: 7%;
+    width: 14%;
+    height: auto;
+}
+
+#player4 {
+    top: 15%;
+    left: 79%;
+    width: 14%;
+    height: auto;
+}
+
+#player5 {
+    top: 40%;
+    left: 7%;
+    width: 14%;
+    height: auto;
+}
+
+#player6 {
+    top: 65%;
+    left: 32%;
+    width: 14%;
+    height: auto;
+}
+
+#player7 {
+    top: 20%;
+    left: 43%;
+    width: 14%;
+    height: auto;
+}
+
+#player8 {
+    top: 65%;
+    left: 55%;
+    width: 14%;
+    height: auto;
+}
+
+#player9 {
+    top: 82%;
+    left: 43%;
+    width: 14%;
+    height: auto;
+}
+
+#player10 {
+    top: 40%;
+    left: 79%;
+    width: 14%;
+    height: auto;
+}
+
+#player11 {
+    top: 60%;
+    left: 79%;
+    width: 14%;
+    height: auto;
+}
+
+.search-input {
+    padding: 0.5rem 0.625rem;
+    border: 0.125rem solid #DDDDDD;
+    border-radius: 0.5rem;
+    background-color: #1A1A1D;
+    color: #C3073F;
+    font-size: 1rem;
+    box-sizing: border-box;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.filter-item {
+    margin-bottom: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.right-content {
+    width: 30%;
+    padding: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1A1A1D;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 0.5rem 0.5rem;
+    overflow-y: auto;
+    max-height: 12.5rem;
+}
+
+.dropdown-content a {
+    color: #C3073F;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #DDDDDD;
+}
+
+.filter-dropdown.active + .dropdown-content {
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+.player-details {
+    display: none;
+    background-color: #222;
+    color: #fff;
+    padding: 0.9375rem 1.25rem;
+    border-radius: 0.625rem;
+    border: 0.125rem solid #DDDDDD;
+    margin-top: 1.25rem;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+    width: 75%;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid #444;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.detail-value {
+    font-size: 1rem;
+    text-align: right;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#removePlayerButton {
+    display: block;
+    margin: 1.25rem auto;
+    padding: 0.625rem 1.25rem;
+    background-color: #DDDDDD;
+    color: #1A1A1D;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 50%;
+    transform: translateX(3.75rem);
+    transition: background-color 0.3s;
+}
+
+#removePlayerButton:hover {
+    background-color: #C3073F;
+}
+
+.football-pitch {
+    opacity: 0.7;
+}
+
+#playerImageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.fut-player-card {
+    position: relative;
+    width: 8.125rem;
+    height: 9.375rem;
+    background-image: url(https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 1.5rem 0;
+    z-index: 2;
+}
+
+.fut-player-card .player-card-top {
+    position: relative;
+    color: #e9cc74;
+    padding: 0.3rem;
+}
+
+.fut-player-card .player-card-top .player-master-info {
+    position: absolute;
+    line-height: 0.9rem;
+    font-weight: 300;
+    padding: 0.3rem 0;
+    text-transform: uppercase;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-rating {
+    font-size: 0.8rem;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-position {
+    font-size: 0.5rem;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-nation {
+    display: block;
+    width: 0.8rem;
+    height: 0.625rem;
+    margin: 0.1rem 0;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-nation img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-club {
+    display: block;
+    width: 0.84rem;
+    height: 1rem;
+}
+
+.fut-player-card .player-card-top .player-master-info .player-club img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fut-player-card .player-card-top .player-picture {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.fut-player-card .player-card-top .player-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    right: 0rem;
+    bottom: 0;
+}
+
+.fut-player-card .player-card-top .player-picture .player-extra {
+    position: absolute;
+    right: 0;
+    bottom: -0.1rem;
+    overflow: hidden;
+    font-size: 0.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    height: 0.6rem;
+    padding: 0 0.6rem;
+    text-align: right;
+    background: none;
+}
+
+.fut-player-card .player-card-top .player-picture .player-extra span {
+    margin-left: 0.15rem;
+    text-shadow: 0.75px 0.75px #333;
+}
+
+.fut-player-card .player-card-bottom {
+    position: relative;
+}
+
+.fut-player-card .player-card-bottom .player-info {
+    display: block;
+    padding: 0.1rem 0;
+    color: #e9cc74;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-name {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(233, 204, 116, 0.1);
+    padding-bottom: 0.05rem;
+    overflow: hidden;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-name span {
+    display: block;
+    text-shadow: 0.75px 0.75px #111;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features {
+    margin: 0.2rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col {
+    border-right: 1px solid rgba(233, 204, 116, 0.1);
+    padding: 0 0.8rem;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col span {
+    display: flex;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col span .player-feature-value {
+    margin-right: 0.1rem;
+    font-weight: 700;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col span .player-feature-title {
+    font-weight: 300;
+}
+
+.fut-player-card .player-card-bottom .player-info .player-features .player-features-col:last-child {
+    border: 0;
+}
