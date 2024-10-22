@@ -11,6 +11,7 @@ FIFA Assistant is a web application that provides information about FIFA 24 play
 5. [Usage](#usage)
 6. [API Endpoints](#api-endpoints)
 7. [Chemistry Links](#chemistry-links)
+8. [Screenshots](#screenshots)
 
 ## Features
 
@@ -133,3 +134,15 @@ cursor.execute('''
 ```
 
 This feature enhances the squad-building experience by suggesting players that would have good chemistry in the game.
+
+## Screenshots
+![Homepage](screenshots/homepage1.png)
+![Homepage](screenshots/homepage2.png)
+![Player Search Filters](screenshots/player_searchfilters1.png)
+![Player Search Filters](screenshots/player_searchfilters2.png)
+![Squad Builder](screenshots/squad_builder.png)
+![Player Comparison](screenshots/player_comparing1.png)
+![Player Comparison](screenshots/player_comparing2.png)
+![Player Bio](screenshots/player_bio1.png)
+![Player Bio](screenshots/player_bio2_links.png)
+
