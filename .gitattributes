@@ -1,4 +1,17 @@
-Frontend/**/*.js linguist-vendored=false
-Frontend/**/*.jsx linguist-vendored=false
-Frontend/**/*.ts linguist-vendored=false
-Frontend/**/*.tsx linguist-vendored=false
+# Frontend files (JavaScript/TypeScript)
+Frontend/**/*.js linguist-language=JavaScript linguist-detectable=true linguist-vendored=false
+Frontend/**/*.jsx linguist-language=JavaScript linguist-detectable=true linguist-vendored=false
+Frontend/**/*.ts linguist-language=TypeScript linguist-detectable=true linguist-vendored=false
+Frontend/**/*.tsx linguist-language=TypeScript linguist-detectable=true linguist-vendored=false
+
+# Exclude Python virtual environments and cache
+**/venv/** linguist-vendored=true
+**/env/** linguist-vendored=true
+**/__pycache__/** linguist-generated=true
+*.pyc linguist-generated=true
+*.pyo linguist-generated=true
+*.pyd linguist-generated=true
+
+# Common generated Python files
+**/migrations/** linguist-generated=true
+*.ipynb linguist-documentation=true
