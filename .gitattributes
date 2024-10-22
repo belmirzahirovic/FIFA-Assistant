@@ -1,2 +1,4 @@
-*.js linguist-vendored=false
-*.jsx linguist-vendored=false
+Frontend/**/*.js linguist-vendored=false
+Frontend/**/*.jsx linguist-vendored=false
+Frontend/**/*.ts linguist-vendored=false
+Frontend/**/*.tsx linguist-vendored=false
